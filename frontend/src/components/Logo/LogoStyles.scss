@@ -1,0 +1,39 @@
+
+$color-header-title: rgb(0,0,0);
+$color-header-title-shadow: rgb(255, 255, 255);
+
+.header-logo{
+    width: 10em;
+    height: 4em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .block-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+        height: inherit;
+        
+        .img-logo{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .header-tittle{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        color: $color-header-title;
+        text-shadow: 1px 1px $color-header-title-shadow,
+        -1px 1px $color-header-title-shadow,
+        1px -1px $color-header-title-shadow,
+        -1px -1px $color-header-title-shadow;
+    }
+}

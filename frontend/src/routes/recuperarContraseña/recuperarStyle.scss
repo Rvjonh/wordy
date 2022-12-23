@@ -1,0 +1,65 @@
+@import './../../extraStylies/extraMQ';
+@import './../../extraStylies/pressButton';
+@import './../../extraStylies/formStyle';
+
+.main-block-recuperar{
+    width: 100%;
+    max-width: 80em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    .recuperar-header-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: loto, sans-serif;
+        font-size: 1.5rem;
+        margin: 1em 0;
+    }
+
+    .part-context{
+        width: 100%;
+        max-width: 30em;
+
+        .part-block{
+            margin: 0;
+            padding: 0 1em;
+            margin-bottom: 2em;
+            
+            .message-block{
+                font-size: 1.1rem;
+                text-indent: 2em;
+                text-align: justify;
+                margin: 1em 0;
+            }
+
+            .email-form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-size: 1rem;
+
+                border-radius: 0.1em;
+
+                .field-email{
+                    @extend .label-title;
+                    margin: 1em;
+                    width: 90%;
+                    @include mqw(35em){
+                        width: 70%;
+                    }
+                }
+
+                .send-code-button{
+                    margin: 2em 0;
+                    @extend .press-button;
+                }
+            }
+        }
+    }
+}

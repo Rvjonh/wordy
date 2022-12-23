@@ -1,0 +1,41 @@
+
+
+.button-home{
+    cursor: pointer;
+    padding: 0.8em;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.2em;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    transition: all 0.25s;
+}
+.button-home:hover{
+    filter: brightness(1.5);
+}
+
+.button-home_big{
+    padding: 1em;
+}
+
+.f-black{
+    color: rgb(0, 0, 0);
+}
+.f-white{
+    color: rgb(255, 255, 255);
+}
+
+.blue{
+    background-color: rgb(30, 205, 255);
+}
+.red{
+    background-color: rgb(240, 41, 41);
+}
+.orange{
+    background-color: rgb(240, 147, 41);
+}
+.green{
+    background-color: rgb(14, 212, 14);
+}

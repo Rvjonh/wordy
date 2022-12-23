@@ -1,0 +1,112 @@
+
+
+.body-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-top{
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title{
+        cursor: cursor;
+        border: 0.15em solid rgb(0, 0, 0);
+        border-radius: 0.1em;
+        padding: 0.15em;
+        color: rgb(0, 0, 0);
+        background-color: rgb(50, 201, 255);
+        text-shadow: 1px 1px rgb(255 255 255), -1px 1px rgb(255 255 255), 1px -1px rgb(255 255 255), -1px -1px rgb(255 255 255);
+        text-decoration: none;
+    }
+}
+
+.container-recover-password{
+    max-width: 600px;
+    margin-top: 1em;
+
+    .title-form{
+        margin: 0.7em 0;
+    }
+    .indications-form{
+        margin: 0.7em 0;
+    }
+    .form{
+        margin: 0.7em 0;
+        padding: 1em;
+
+        .campo-input{
+            font-weight: bold;
+            margin-bottom: .8em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            input{
+                width: 96%;
+                font-size: 1.2rem;
+                margin-top: .3em;
+                padding: .2em;
+                padding-left: .5em;
+                border-radius: 1em;
+            }
+            input.invalido{
+                border: .2em solid rgb(255, 0, 0);
+            }
+        }
+
+        .warning-message{
+            opacity: 0;
+            visibility: hidden;
+            font-size: 1rem;
+            color: rgb(255, 0, 0);
+            transition: .25s all ease;
+        }
+        .warning-message.active{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .registro-button{
+            cursor: pointer;
+            outline: none;
+            margin-top: 1.2em;
+            margin-bottom: 2em;
+            padding: 1em;
+            border: .2em solid rgb(0, 0, 0);
+            border-radius: .5em;
+            box-shadow: 0 .6em .1em rgb(0, 0, 0);
+            background-color: rgb(11, 168, 11);
+            transform: translateY(-0.5em);
+            transition: all .2s;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .registro-button:active{
+            box-shadow: 0 .1em .1em rgb(0, 0, 0);
+            transform: translateY(0);
+            filter: brightness(1);
+            background-color: rgb(143, 143, 143);
+        }
+        .registro-button.active{
+            box-shadow: 0 .1em .1em rgb(0, 0, 0);
+            transform: translateY(0);
+            filter: brightness(1);
+            background-color: rgb(143, 143, 143);
+        }
+        .registro-button:focus, .registro-button:hover{
+            /* outline: .2em solid rgb(0, 0, 0); */
+            filter: brightness(1.5);
+        }
+    }
+}

@@ -1,0 +1,57 @@
+//fade-in
+.fade-in{
+    animation: fade-show 5s linear infinite;
+}
+@keyframes fade-show {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+}
+
+//go-up
+.go-up{
+    animation: go-up 6s linear infinite;
+}
+@keyframes go-up {
+    0%{
+        opacity: 0;
+        transform: translateY(2em);
+    }
+    10%{
+        opacity: 1;
+        transform: translateY(0em);
+    }
+}
+
+//rotate-from-left
+.rotate-from-left{
+    animation: rotate-from-left 7s linear infinite;
+}
+@keyframes rotate-from-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-4em) rotate(-180deg);
+    }
+    10%{
+        opacity: 1;
+        transform: translateX(0em) rotate(0);
+    }
+}
+
+//rotate-from-top
+.rotate-from-top{
+    animation: rotate-from-top 8s linear infinite;
+}
+@keyframes rotate-from-top {
+    0%{
+        opacity: 0;
+        transform: translateY(-4em) rotate(-180deg);
+    }
+    10%{
+        opacity: 1;
+        transform: translateY(0em) rotate(0);
+    }
+}

@@ -1,0 +1,32 @@
+//styled button in forms
+
+.press-button{
+    cursor: pointer;
+    outline: none;
+    padding: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+    border: .2em solid rgb(0, 0, 0);
+    border-radius: .5em;
+    box-shadow: 0 .6em .1em rgb(0, 0, 0);
+    background-color: rgb(11, 168, 11);
+    filter: brightness(1.5);
+    transform: translateY(-0.5em);
+    transition: all .2s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.press-button:hover{
+    filter: brightness(1.5);
+}
+.press-button.active, .press-button:focus{
+    filter: brightness(1.5);
+}
+.press-button.clicked, .press-button:active{
+    box-shadow: 0 .1em .1em rgb(0, 0, 0);
+    transform: translateY(0);
+    filter: brightness(1);
+    background-color: rgb(143, 143, 143);
+}

@@ -1,0 +1,24 @@
+@import "./../../extraStylies/extraMQ";
+
+$color-login-button: rgb(14, 212, 14);
+$color-text-menu-items-actived: rgb(212, 212, 212);
+
+a.login-button{
+    padding: .1em .5em;
+    height: inherit;
+    font-size: inherit;
+    background-color: $color-login-button;
+    transition: none;
+    border-radius: .1em;
+    box-shadow: 0 .2em .1em rgb(0, 0, 0);
+    transform: translateY(-0.2em);
+}
+a.login-button:active{
+    box-shadow: 0 .1em .1em rgb(0, 0, 0);
+    transform: translateY(0);
+}
+a.login-button:hover{
+    box-shadow: 0 .2em .1em rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    filter: brightness(1.5);
+}

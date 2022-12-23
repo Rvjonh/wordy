@@ -1,0 +1,293 @@
+@import './../../extraStylies/extraMQ';
+@import './../../extraStylies/pressButton';
+
+$color-border-menu: rgba(128, 128, 128, 0.5);
+
+.dicts-header{
+    width: 100%;
+    .title{
+        margin-top: 0.5em;
+        text-align: center;
+    }
+    .text{
+        padding: 1em;
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+.language-selection{
+    width: 100%;
+    margin: 0.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    .title{
+        width: 100%;
+        text-align: left;
+        font-size: 1.1rem;
+        margin-left: 1em;
+        max-width: 40em;
+    }
+    
+    .list-selection{
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        max-width: 45em;
+        overflow-x: auto;
+        border: 0.2em solid rgb(128, 128, 128) ;
+        border-radius: 0.2em;
+        padding: 0 0.5em;
+        
+        .img-item{
+            cursor: pointer;
+            box-sizing: border-box;
+            flex: 0 0;
+            margin: 0.5em 0;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.15s ease;
+            border: 0.2em solid rgb(255, 255, 255);
+            opacity: 0.7;
+            
+            img{
+                width: 6.1em;
+                height: 4em;
+                object-fit: contain;
+            }
+        }
+        .img-item.selected{
+            border: 0.2em solid rgb(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}
+
+.dictionaries{
+    width: 100%;
+    max-width: 40em;
+    padding: .4em;
+    border-radius: 0.5em;
+    background-color: rgba(240, 240, 240, 0.5);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mqw(35em){
+        margin: 1em;
+    }
+
+    .dictionary{
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 0;
+        overflow: hidden;
+        font-family: monospace;
+
+        box-shadow: 0.2em 0.2em 0.2em rgba(150, 150, 150, 0.5),
+                    -0.2em 0.2em 0.2em rgba(150, 150, 150, 0.5),
+                    0.01em -0.2em 0.2em rgba(150, 150, 150, 0.5);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        
+        .info{
+            width: 100%;
+            display: flex;
+
+            @include mqw(35em){
+                height: 10em;
+            }
+
+            .registro{
+                width: 35%;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                text-align: center;
+                font-weight: bold;
+                position: relative;
+                color: rgb(255, 255, 255);
+                text-shadow: 0.1em 0.1em rgb(0, 0, 0),
+                            -0.1em 0.1em rgb(0, 0, 0),
+                            0.1em -0.1em rgb(0, 0, 0),
+                            -0.1em -0.1em rgb(0, 0, 0);
+
+                b{
+                    font-size: 3rem;
+                }
+                > * {
+                    z-index: 2;
+                }
+                
+            }
+            .registro::before{
+                content: " ";
+                position: absolute;
+                left: 0;
+                width: 10%;
+                height: 100%;
+                transition: all .25s;
+            }
+            .title{
+                width: 60%;
+                flex: 4;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                @include mqw(35em){
+                    flex: 3;
+                }
+                @include mqw(55em){
+                    flex: 2;
+                }
+
+                .info-logo{
+                    width: 100%;
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    margin-left: 0.4em;
+                    border-bottom: .2em solid $color-border-menu;
+
+                    .info-img{
+                        display: block;
+                        width: 4em;
+                        height: 4em;
+                        object-fit: contain;
+                        margin-left: .5em;
+                    }
+                    .info-title{
+                        align-self: center;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-left: .3em;
+                        font-size: 1.2rem;
+                        font-family: Arial, Helvetica, sans-serif;
+
+                        position: relative;
+                        overflow: hidden;
+
+                        span{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            overflow: hidden;
+                            padding-right: 1em;
+
+                            height: 100%;
+                            position: absolute;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+                .info-description{
+                    width: 100%;
+                    height: 50%;
+                    color: rgb(0, 0, 0);
+                    padding: 0.5rem;
+                    text-align: left;
+                    font-size: 1rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        
+
+        .action-buttons{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .action-part{
+                width: 100%;
+
+                .action-button{
+                    @extend .press-button;
+                    cursor: pointer;
+                    filter: none;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.5em;
+                    margin-top: 0.5em;
+
+                    .logo-button{
+                        width: 3em;
+                        height: 3em;
+                        object-fit: contain;
+                        margin-right: 1em;
+                    }
+                    .title-button{
+                        font-size: 1.1rem;
+                        @include mqw(35em){
+                            display: block;
+                        }
+                    }
+                }
+                .bg-blue{
+                    background-color: rgb(0, 191, 255);
+                }
+                .bg-yellow{
+                    background-color: rgb(249, 174, 25);
+                }
+            }
+        }
+    }
+    .dictionary + .dictionary{
+        margin-top: 1.5em;
+    }
+}
+
+$list:(
+    rgb(241, 165, 32),
+    rgb(205, 31, 70),
+    rgb(227, 84, 85),
+    rgb(43, 90, 155),
+    rgb(185, 104, 197),
+    rgb(133, 28, 85),
+    rgb(83, 162, 62),);
+
+@for $var from 1 to 8 {
+    .dictionary:nth-child(7n+#{$var}) .info .registro::before{
+        background-color: nth($list, $var) ;
+    }
+    .dictionary:nth-child(7n+#{$var}) .info .registro{
+        border-right: .2em solid nth($list, $var);
+    }
+    .dictionary:nth-child(7n+#{$var}):hover .info .registro::before{
+        animation: show-back-back .25s linear forwards;
+    }
+}
+@keyframes show-back-back {
+    from{
+        width: 25%;
+    }
+    to{
+        width: 101%;
+    }
+}

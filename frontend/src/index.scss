@@ -1,0 +1,39 @@
+
+body {
+    font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+#root{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+// for titles
+@font-face {
+    font-family: loto, sans-serif;
+    src: url('./extraFonts/Lato-BoldItalic.ttf');
+}
+
+.title-header{
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: loto, sans-serif;
+}

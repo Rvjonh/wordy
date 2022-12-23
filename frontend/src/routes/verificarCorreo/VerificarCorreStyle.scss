@@ -1,0 +1,13 @@
+
+.image-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(105, 243, 92);
+}
+
+img.image-card{
+    width: 10em;
+    height: 10em;
+    object-fit: contain;
+}

@@ -1,0 +1,96 @@
+@import './../../extraStylies/formStyle';
+@import './../../extraStylies/pressButton';
+
+.main-perfil{
+    width: 100%;
+    max-width: 80em;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 5em;
+
+
+    .header-perfil{
+        margin: 0;
+        .header-title{
+            margin: 0;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-bottom: .1em solid rgba(128, 128, 128, 0.5);
+            border-right: .1em solid rgba(128, 128, 128, 0.5);
+            border-left: .1em solid rgba(128, 128, 128, 0.5);
+            box-shadow: .05em .05em .05em rgba(128, 128, 128, 0.5);
+            padding: 0.2em 2em;
+            font-size: 1.5rem;
+            border-bottom-left-radius: 2em;
+            border-bottom-right-radius: 2em;
+        }
+    }
+
+    .data-profile{
+        width: 100%;
+        max-width: 40em;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        padding: 1em 0;
+
+        .img-perfil{
+            width:12em;
+            height:12em;
+            border-radius:50%;
+
+            border: .2em solid rgba(128, 128, 128, 0.5);
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: rgba(128, 128, 128, 0.5);
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+            }
+        }
+
+        .info-perfil{
+            width: 90%;
+
+            .form-perfil{
+               display: flex;
+               justify-content: flex-start;
+               align-items: center;
+               flex-direction: column;
+               .campo-input{
+                   @extend .label-title;
+               }
+           }
+        }
+
+        .submit-data-block{
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+
+            .submit-button{
+                @extend .press-button;
+            }
+        }
+    }
+
+    
+}
+.warning-error{
+    color: red;
+    text-decoration: none;
+    font-weight: 700;
+}

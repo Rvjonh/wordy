@@ -1,0 +1,524 @@
+@import './../../../extraStylies/extraMQ.scss';
+
+.layout-ejercicios-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.progress-bar{
+    width: 100%;
+    height: 5%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @include mqh(45em){
+        height: 10%;
+    }
+    
+    .close-practice-button{
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: 2rem;
+        opacity: 0.5;
+    }
+}
+
+.ejercicio{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.ejercicio-section{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    .ejercicio1{
+        @extend .ejercicio;
+        margin: 1em;
+        max-width: 30em;
+        overflow: hidden;
+        
+        @include mqw(35em){
+            margin-top: 5%;
+        }
+    }
+
+}
+.error-panel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .error-panel-img{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+            max-width: 20em;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .error-panel-title{
+        text-align: center;
+        max-width: 40em;
+    }
+    .error-panel-text{
+        text-align: center;
+        max-width: 40em;
+    }
+}
+
+
+.title-e{
+    width: 100%;
+    text-align: left;
+    padding: 0 0.1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    @include mqw(35em){
+        padding: 0.2em 1em;
+    }
+
+    .img-ejercicio{
+        margin: 0 0.5em;
+        img{
+            width: 2em;
+            height: 2em;
+            object-fit: contain;
+        }
+    }
+}
+.title-centered{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-finish{
+    border-bottom:0.2em solid gray;
+}
+.remembering-title{
+    text-align: center;
+    border-bottom: 0.2em solid rgb(144, 144, 144);
+}
+
+.extra-text{
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0.2em;
+    
+    @include mqw(35em){
+        padding: 0.2em 1.5em;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .img-ejercicio{
+        margin: 0 0.5em;
+        img{
+            width: 2em;
+            height: 2em;
+            object-fit: contain;
+        }
+    }
+}
+.extra-centered{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+.remarked-text{
+    width: 100%;
+    border-radius: 0.3em;
+    border: 0.2em solid black;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    .palabra-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        .palabra-title{
+            font-weight: bold;
+        }
+    }
+}
+.extra-controls{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .container-wordplayer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1em;
+    }
+    
+    .img-wordplayer{
+        cursor: pointer;
+        width: 40%;
+        height: 7em;
+        max-width: 20em;
+        max-height: 20em;
+        padding: 1em;
+        border-radius: 1em;
+        border: 0.2em solid rgb(0, 0, 0);
+        background-color: rgb(27, 183, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.25s ease;
+
+        @include mqw(35em){
+            width: 30%;
+            height: 10em;
+        }
+    
+        img, .img-logo{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .img-wordplayer:active, .img-wordplayer.active{
+        background-color: rgb(123, 177, 202);
+    }
+}
+.img-wordplayer-small{
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    margin-left: 0.5em;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.input-voces{
+    width: 100%;
+
+    .input-title{
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .input-img{
+            width: 2em;
+            height: 2em;
+        }
+    }
+
+    .input-selection{
+        width: 100%;
+        font-size: 1.2rem;
+    }
+}
+
+.text-area{
+    width: 90%;
+    min-height: 7em;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    border-radius: 1em;
+    padding: 1em 0.5em;
+    margin: 0.5em;
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+.text-area-helper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .text-area-checker{
+        cursor: pointer;
+        padding: 0.25em;
+    }
+
+    .text-area-helper-items{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .item-helper{
+            cursor: pointer;
+            border-radius: 0.2em;
+            outline: none;
+            padding: 0.5em;
+            font-size: 1.2rem;
+            transition: 0.25s ease;
+        }
+        .item-helper + .item-helper{
+            margin-left: 0.3em;
+        }
+        .item-helper:hover{
+            background-color: #5ac9ff;
+        }
+    }
+}
+.ejercicio-columns{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.ejercicio-container{
+    width: 100%;
+    height: 100%;
+
+    @include mqw(35em){
+        padding: 0.5em;
+    }
+}
+.item-option{
+    cursor: pointer;
+    width: 100%;
+    height: 4em;
+    font-size: 1.2rem;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2em 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.2em 0.2em rgb(0, 0, 0);
+    border: 0.2em solid rgb(0, 0, 0);
+    transition: all 0.25s ease;
+    
+    .number-option{
+        width: 10%;
+    }
+    .text-option{
+        width: 90%;
+    }
+}
+.item-option:active{
+    box-shadow: 0.0em 0.0em rgb(255, 255, 255);
+}
+.item-option.selected{
+    box-shadow: 0.2em 0.2em rgb(90, 201, 255);
+    border: 0.2em solid rgb(90, 201, 255);
+    background-color: rgb(245, 251, 255);
+}
+.item-option-expanded{
+    margin: 0.3em;
+}
+.item-option.success{
+    border: 0.2em solid rgb(21, 255, 0);
+    box-shadow: 0.2em 0.2em rgb(21, 255, 0);
+    background-color: rgb(170, 255, 163);
+
+    animation: right-item 0.25s ease;
+}
+@keyframes right-item {
+    from{transform: scale(1);}
+    50%{transform: scale(1.1);}
+    to{transform: scale(1);}
+}
+.item-option.error{
+    border: 0.2em solid rgb(255, 0, 0);
+    box-shadow: 0.2em 0.2em rgb(255, 0, 0);
+    animation: skew-x-shake 0.25s ease;
+}
+@keyframes skew-x-shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flex-top{
+    justify-content: flex-start;
+}
+
+.none{
+    color: rgb(0, 0, 0);
+    border: 0.1em solid gray;
+}
+.success{
+    border: 0.1em solid rgb(21, 255, 0);
+    background-color: rgba(171, 253, 163, 0.338);
+}
+.error{
+    border: 0.1em solid rgb(255, 0, 0);
+    background-color: rgba(250, 194, 194, 0.329);
+}
+.msj-bloq{
+    border: 0.2em solid rgba(116, 116, 116, 0.49);
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    .item{
+        padding: 0.2em 0;
+    }
+}
+
+.commands-section{
+    margin-top: auto;
+    width: 100%;
+    height: 15%;
+    max-height: 7em;
+    border-top: 1px solid rgb(140, 140, 140);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-muestra{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mqw(35em){
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .img-object{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 100%;
+            height: 100%;
+            padding: 2em;
+            max-width: 15em;
+            object-fit: contain;
+        }
+    }
+}
+
+.words-panel-edited{
+    min-height: auto;
+}
+
+.list-icon{
+    width: 40%;
+    height: 90%;
+    max-width: 5em;
+    position: relative;
+
+    @include mqw(45em){
+        max-width: 6em;
+    }
+
+    .icon{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.word-player-small{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .word-player-info{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0.5em 0;
+
+        .word-player-text{
+            font-size: 1.2rem;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+
+        .word-player-img-small{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            max-width: 3em;
+            height: 100%;
+            max-width: 3em;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .img-clickable{
+            cursor: pointer;
+        }
+    }
+}

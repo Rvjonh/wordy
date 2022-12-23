@@ -1,0 +1,105 @@
+.animacion-fading-balls{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: visible;
+
+    display: flex;
+    z-index: -2;
+
+    height: 5em;
+
+    @keyframes fade-to-top {
+        from{
+            opacity: 0;
+            transform: translateY(5em) scale(1.2);
+        }
+        50%{
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+            transform: translateY(0em) scale(0.5);
+        }
+    }
+    @keyframes fade-to-bottom {
+        from{
+            opacity: 0;
+            transform: translateY(-5em) scale(1.2);
+        }
+        50%{
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+            transform: translateY(0em) scale(0.5);
+        }
+    }
+    
+    /* .ball-fade-top{
+        animation: fade-to-top linear infinite;
+    } */
+    .fade-top:nth-child(1n){
+        animation: fade-to-top 1s linear infinite;
+    }
+    .fade-top:nth-child(2n){
+        animation: fade-to-top 1.25s linear infinite;
+    }
+    .fade-top:nth-child(3n){
+        animation: fade-to-top 1s linear infinite;
+    }
+
+    .fade-bottom:nth-child(1n){
+        animation: fade-to-bottom 1s linear infinite;
+    }
+    .fade-bottom:nth-child(2n){
+        animation: fade-to-bottom .75s linear infinite;
+    }
+    .fade-bottom:nth-child(3n){
+        animation: fade-to-bottom 1.25s linear infinite;
+    }
+
+    .set-left{
+        width: 25%;
+        left: 0;
+    }
+
+    .set-right{
+        width: 25%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .set-3-balls{
+        position: absolute;
+        overflow: visible;
+
+        .ball-fade{
+            width: 2em;
+            height: 2em;
+            background: linear-gradient(to right, rgb(152, 162, 255), rgb(66, 109, 248));
+            box-shadow: .2em .2em .2em rgb(74, 113, 240);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .ball-fade-1{
+            @extend .ball-fade;
+            left:calc( 25% - 1em);
+            bottom: 20%;
+        }
+        .ball-fade-2{
+            @extend .ball-fade;
+            left:calc( 50% - 1em);
+            bottom: 10%;
+        }
+        .ball-fade-3{
+            @extend .ball-fade;
+            left:calc( 75% - 1em); 
+            bottom: 70%;             
+        }
+        
+    }
+}

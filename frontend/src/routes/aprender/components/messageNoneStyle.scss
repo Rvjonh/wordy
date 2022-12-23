@@ -1,0 +1,22 @@
+
+
+.none-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .message{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .message-img{
+            width: 10rem;
+            height: 10rem;
+            margin-right: 1em;
+        }
+    }
+}

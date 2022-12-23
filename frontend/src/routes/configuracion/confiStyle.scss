@@ -1,0 +1,188 @@
+@import './../../extraStylies/extraMQ.scss';
+
+.container-confi{
+
+    width: 100%;
+    height: 90%;
+    max-width: 80em;
+    margin: 0 auto;
+    position: relative;
+    
+    @include mqw(35em){
+        max-height: 40em;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    .header{
+        padding: 0.4em 0 ;
+        font-size: 1.5rem;
+        background-color: rgb(59, 251, 59);
+        width: 100%;
+        text-align: center;
+    }
+
+    .keepConfig{
+        cursor: pointer;
+        border: 0.1em solid rgb(128, 128, 128);
+        border-radius: 0.2rem;
+
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 600;
+        
+        margin: 0.7em 0;
+        padding: 0.3rem;
+        
+        transition: all 0.25s;
+
+        input{
+            cursor: pointer;
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+    .keepConfig.selected{
+        color: rgb(255, 255, 255);
+        background-color: rgb(90, 201, 255);
+    }
+    .keepConfig::selection{
+        background-color: transparent;
+    }
+
+    $list:(
+        rgb(241, 165, 32),
+        rgb(205, 31, 70),
+        rgb(227, 84, 85),
+        rgb(43, 90, 155),
+    );
+    .exercise{
+        @extend .keepConfig;
+    }
+
+    @for $var from 1 to 5 {
+        .exercise:nth-child(7n+#{$var}).selected{
+            background-color: nth($list, $var) ;
+            filter:opacity(0.9);
+        }
+    }
+
+    .content{
+        background-color: rgb(240, 240, 240);
+
+        width: 100%;
+        margin: 0 0.1em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include mqw(35em){
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .sec{
+            border: 0.2em solid rgb(113, 113, 113);
+            border-radius: 0.2em;
+            background-color: rgb(255, 255, 255);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 98%;
+            height: 90%;
+            margin: 0.5em;
+
+            @include mqw(35em){
+                margin: 1em;
+            }
+            
+            .title{
+                width: 95%;
+                margin: 0.5em 0.2em;
+                padding-bottom: 0.5em;
+                border-bottom: 0.2em solid black;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+            }
+
+            .contador-words{
+                margin: 0 1em;
+                display: flex;
+
+                .numeroWords{
+                    cursor: w-resize;
+                    outline: none;
+                    border: 0.3rem solid rgb(0, 0, 0);
+                    border-radius: 0.2rem;
+    
+                    margin: 0 0.1em;
+                    padding: 0 0.5em;
+                    font-size: 2rem;
+                    text-align: center;
+                }
+                .numeroWords::selection{
+                    color: rgb(0, 0, 0);
+                    background-color: transparent;
+                }
+                .button-contador{
+                    cursor: pointer;
+                    width: 1.1em;
+                    height: 1.1em;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    font-size: 3.2rem;
+                    outline: none;
+                    border: 0.3rem solid rgb(0, 0, 0);
+
+                }
+            }
+
+            .message-n-words{
+                margin: 2rem;
+            }
+        }
+    }
+}
+
+.btn-success{
+    background-color: #21e62b;
+}
+.btn-fail{
+    background-color: red;
+}
+
+.float-container{
+    width: 1px;
+    height: 1px;
+    position: sticky;
+    top: 90%;
+    margin-left: 25%;
+    
+    @include mqw(36em){
+        margin-left: 50%;
+    }
+
+    @include mqw(70em){
+        margin-left: 75%;
+    }
+
+    .button-save-confi{
+        z-index: 3;
+        width: 10em;
+    }
+}

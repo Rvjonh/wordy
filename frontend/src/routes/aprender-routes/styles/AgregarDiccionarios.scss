@@ -1,0 +1,249 @@
+@import './../../../extraStylies/extraMQ';
+
+$backgroundPanelWords: rgb(245, 245, 245);
+$backgroundColorWord: rgb(50, 250, 50);
+$borderColorPanel:rgb(202, 202, 202);
+
+.button-guardar{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+.title-form{
+    padding: 0.5em 0;
+}
+.form-data{
+    width: 100%;
+    padding: 0 1em;
+    font-size: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    
+    @include mqw(35em){
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        max-width: 40em;
+    }
+
+    .campo-input{
+        font-weight: bold;
+        margin: 0 1em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        font-weight: bold;
+
+        @include mqw(35em){
+            width: 50%;
+            margin: 0;
+        }
+
+        input{
+            width: 100%;
+            font-size: 1.2rem;
+            margin-top: .3em;
+            padding: .2em;
+            padding-left: .5em;
+            border-radius: 1em;
+        }
+        input.invalido{
+            border: .2em solid rgb(255, 0, 0);
+        }
+    }
+
+    .campo-idioma{
+        font-weight: bold;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: bold;
+
+        @include mqw(35em){
+            width: auto;
+        }
+        .img-state{
+            cursor: pointer;
+            padding-left: 0.5em;
+            transition: all 0.25s;
+            animation: appear-img 0.25s ease;
+            img{
+                width: 5em;
+                height: 3em;
+            }
+        }
+        @keyframes appear-img {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .input-idioma{
+            cursor: pointer;
+            margin-left: 0.5em;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.form-palabras{
+    width: 100%;
+    border-radius: 0.1em;
+    background-color: $backgroundPanelWords;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    border: 0.2em solid $borderColorPanel;
+    border-bottom: none;
+
+    
+    @include mqw(35em){
+        max-width: 40em;
+    }
+    @keyframes show-palabra {
+        from{
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        to{
+            opacity: 1;
+            height: 100%;
+            overflow: visible;
+        }
+    }
+
+    .palabra{
+        width: 100%;
+        margin: 0.4em 0;
+        padding: 0.4em 0;
+        border-radius: 0.2em;
+
+        transition: all 0.5s ease;
+        animation: show-palabra 0.5s ease;
+
+        background-color: $backgroundColorWord;
+
+        font-size: 1.2rem;
+        display: flex;
+
+        .palabra-id{
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.1em;
+        }
+        .palabra-content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            label{
+                width: 100%;
+                display: flex;
+                margin: 0.2em 0;
+                font-weight: bold;
+                input{
+                    width: 100%;
+                    font-size: 1.1rem;
+                    padding: 0.1rem;
+                    border-radius: 0.4em;
+                    margin-left: 0.2em;
+                }
+            }
+        }
+        .palabra-controls{
+            cursor: pointer;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1em;
+
+            .delete-word{
+                cursor: pointer;
+                outline: none;
+                border: none;
+                background-color: transparent;
+                padding: 0.5em;
+                transition: all 0.25s;
+                img{
+                    width: 2em;
+                    height: 2em;
+                }
+            }
+            .delete-word:active{
+                transform: scale(0.9);
+            }
+            .delete-word:focus{
+                background-color: rgb(140, 140, 140);
+            }
+        }
+    }
+}
+
+.controls-bottom{
+    width: 100%;
+    background-color: $backgroundPanelWords;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 0.2em solid $borderColorPanel;
+    border-top: none;
+
+    @include mqw(35em){
+        max-width: 40em;
+    }
+
+    .button-agregar{
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: $backgroundColorWord;
+        border: 0.1em solid black;
+        border-radius: 50%;
+        font-size: 2.2rem;
+        padding-bottom: 0.2rem;
+        transition: all 0.25s;
+    }
+    .button-agregar:active, .button-agregar:focus{
+        filter: brightness(0.8);
+        font-size: 2rem;
+    }
+}
+
+.controls-final{
+    width: 100%;
+    max-width: 35em;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+
+    .button-guardar{
+        position: relative;
+        bottom: 0;
+        right: 0;
+
+        z-index: 0;
+        img{
+            width: 2em;
+            height: 2em;
+        }
+    }
+}

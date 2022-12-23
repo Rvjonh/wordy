@@ -1,0 +1,348 @@
+@import "../../../extraStylies/extraMQ";
+
+$width-menu: 20em;
+$color-item-menu: rgb(0, 0, 0);
+
+$color-login-button: rgb(14, 212, 14);
+$color-register-button: rgb(212, 14, 14);
+$color-border-menu: rgba(128, 128, 128, 0.5);
+
+
+.header-main{
+    width: 100%;
+    height: fit-content;
+    max-width: 80em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: .1em solid rgba(128, 128, 128, 0.5);
+   
+
+    .section + .section{
+        margin-left: 1em;
+    }
+    .section:hover{
+        opacity: 1;
+    }
+
+    .section.active{    
+        opacity: 1;
+    }
+
+    .section{
+        opacity: 0.5;
+        transition: .25s;
+        border: .2em solid rgba(128, 128, 128, 0.5);
+        border-radius: 1em;
+
+        a{
+            text-decoration: none;
+            padding: 0 1em;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+            @include mqw(35em){
+                padding: 0;
+            }
+
+            .title-section{
+                color: rgb(0, 0, 0);
+                display: none;
+
+                @include mqw(35em){
+                    display: flex;
+                    margin: 0;
+                }
+            }
+
+            .block-img-section{
+                padding-left: .2em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .img-section{
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    ///Menu stylies ...
+
+    .button-menu{
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin-left: auto;
+        cursor: pointer;
+        transition: .25s;
+
+        .button-menu-img {
+            border: .2em solid rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);;
+            border-radius: 50%;
+        }
+    }
+    .button-menu:hover{
+        filter: brightness(1.4);
+    }
+    .button-menu:focus{
+        filter: brightness(1.4);
+        .button-menu-img{
+            border: .2em solid rgb(0, 0, 0);
+        }
+    }
+
+    .menu-screen{
+        display: none;
+    }
+    .menu-screen.showMenu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        .back-block{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.700);
+        }
+
+        @keyframes showMenuRight {
+            from{
+                transform: translateX($width-menu);
+            }
+            to{ transform: translateX(0em); }
+        }
+        .menu-block{
+            width: $width-menu;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            z-index: 2;
+            background-color: rgb(255, 255, 255);
+            transform: translateX(0);
+            animation: showMenuRight .25s ease-in-out forwards;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+
+
+            .close-menu-button{
+                align-self: flex-end;
+                width: 5em;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                background-color: transparent;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            @keyframes turn-button {
+                from{
+                    transform: scale(1);
+                }
+                to{
+                    transform: scale(1.05);
+                }
+            }
+            .close-menu-button:hover, .close-menu-button:focus{
+                animation: turn-button .25s ease infinite;
+            }
+            .close-menu-button:focus{
+                border: .1em solid rgb(0, 0, 0);
+            }
+
+            .menu-options{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                height: 100%;
+                width: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                .title-options{
+                    color: rgb(53, 142, 224);
+                    margin: 0;
+                    padding: 0;
+                    padding-left: 0.5em;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    *{
+                        margin: 0;
+                        padding: 0;
+                        padding-left: 0.5em;
+                    }
+                }
+
+                .list-options{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    li{
+                        border-top: .2em solid rgb(39, 39, 39);
+                        border-bottom: .2em solid rgb(39, 39, 39);
+                        width: 100%;
+                        text-align: left;
+                        a{
+                            display: block;
+                            cursor: pointer;
+                            font-weight: bold;
+                            padding: 1em 0 1em 1em;
+                            text-decoration: none;
+                            color: $color-item-menu;
+                        }
+                        a:visited, a:active{
+                            color: $color-item-menu;
+                        }
+                        a:focus{
+                            background-color: rgb(30, 205, 255);
+                        }
+                    }
+                    li + li{
+                        border-top: none;
+                    }
+                    li:hover{
+                        background-color: rgb(225, 225, 225);
+                    }
+                    
+                    .separador{
+                        height: 4em;
+                        background-color: transparent;
+                    }
+                    .separador:hover{
+                        background-color: transparent;
+                    }
+
+                    .iniciar-button{
+                        a{
+                            width: 100%;
+                            cursor: pointer;
+                            text-align: left;
+                            padding-left: 1em;
+                            outline: none;
+                            border: none;
+                            color: rgb(0, 0, 0);
+                            background-color: $color-login-button;
+                            transition: .25s;
+                        }
+                        a:hover{
+                            filter: brightness(1.5);
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+                    .registrar-button{
+                        background-color: $color-register-button;
+                        transition: .25s;
+
+                        a{
+                            font-weight: 600;
+                            padding-left: 1em;
+                            font-size: 1.1rem;
+                        }
+                        a:hover{
+                            filter: brightness(1.5);
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+                    .registrar-button:hover{
+                        background-color: rgb(248, 105, 105);
+                    }
+
+                    .cerrar-sesion{
+                        width: 90%;
+                        margin-bottom: 1em;
+                        border-top: none;
+                        margin-top: auto;
+                        border-radius: .5em;
+                        text-align: center;
+                        
+                        button{
+                            width: 100%;
+                            height: 3em;
+                            cursor: pointer;
+                            border-radius: .5em;
+                            font-size: 1.2rem;
+                            color: rgb(255, 255, 255);
+                            background-color: rgb(255, 0, 0);
+                            border: .2em solid rgb(0, 0, 0);
+                            box-shadow: .2em .2em rgb(0, 0, 0);
+                            transition: .25s;
+                        }
+                        button:hover{
+                            background-color: rgb(248, 105, 105);
+                        }
+                        @keyframes turn-off-button {
+                            to{
+                                width: 98%;
+                                height: 2.8em;
+                                box-shadow: none;
+                            }
+                        }
+                        button:active{
+                           background-color: rgb(248, 105, 105);
+                           animation: turn-off-button .1s ease forwards;
+                        }
+                        button *::selection{
+                            background: transparent;
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
+
+.showcase-animation{
+    position: absolute;
+    animation: showcase-animation 1s ease infinite;
+}
+.item-static{
+    margin-left: 1.5rem;
+}
+@keyframes showcase-animation {
+    from{
+        font-size: 1rem;
+    }
+    50%{
+        font-size: 1.2rem;
+    }
+    to{
+        font-size: 1rem;
+    }
+}

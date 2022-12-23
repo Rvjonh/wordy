@@ -1,0 +1,77 @@
+@import "../../../extraStylies/extraMQ";
+
+.footer-class{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 1em;
+
+    background-color: rgb(235, 235, 235);
+
+    .information-block{
+        width: 100%;
+    }
+
+    .footer-list{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+
+        .footer-item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            cursor: pointer;
+            margin: .2em 1em;
+
+            a{
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+            }
+            a:active{
+                color: rgb(30, 205, 255);
+            }
+
+            @include mqw(45em){
+                margin: .5em;
+            }
+            @include mqw(60em){
+                margin: .8em;
+            }
+        }
+        .flat-block{
+            opacity: 0;
+            visibility: hidden;
+            margin-top: .2em;
+            height: .3em;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            transition: .25s ease;
+        }
+        li:hover .flat-block{
+            opacity: 1;
+            visibility: visible;
+            animation: up-flat-block .25s forwards;
+        }
+        @keyframes up-flat-block {
+            from{
+                transform: translateY(.5em);
+            }
+            to{
+                transform: translateY(0em);
+            }
+        }
+        
+    }
+}
