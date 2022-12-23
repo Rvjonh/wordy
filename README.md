@@ -10,7 +10,7 @@ There is a section which offers dictionaries full with words from basic to inter
 
 > ----
 
-![Wordy - Front Page](/previews/front-page.png "Front Page of the Application")
+![Wordy - Front Page](Previews/front-page.png "Front Page of the Application")
 
 ## Abstract
 
